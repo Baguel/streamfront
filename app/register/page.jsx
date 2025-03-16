@@ -51,7 +51,7 @@ export default function RegisterForm({
  
   function onSubmit(values) {
       axios.post("https://stream-back-kc0f.onrender.com/auth/register", {
-        username: username,
+        username: values.username,
         email: values.email,
         password: values.password,
       }).then((res) => {
@@ -62,7 +62,7 @@ export default function RegisterForm({
         }
       })
     }
-    
+
   return (
     <div className="min-h-screen bg-gray-100 p-0 sm:p-12" style={{ backgroundImage: 'url("/movie-9pvmdtvz4cb0xl37.jpg")' }}>
     <Form {...form}>
