@@ -38,7 +38,8 @@ export default function RegisterForm({
 }) {
  
   const [error, setError] = useState('');
- 
+  const navigate = useNavigate();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,14 +53,13 @@ export default function RegisterForm({
     const username = values.username;
     const email = values.email;
     const password = values.password;
-    axios.post("http://localhost:3001/auth/register", {
+    axios.post("https://stream-back-kc0f.onrender.com/auth/register", {
       username,
       email,
       password
     }).then((response) => {
       if (response.status == 200) {
-        // nagivate("/login");
-        console.log(response.data);
+        nagivate("/login");
       }
     }).catch(error => {
       if (error.status == 401) {
@@ -68,8 +68,15 @@ export default function RegisterForm({
     });
   }
   return (
-    <div className="min-h-screen bg-gray-100 p-0 sm:p-12">
+    <div className="min-h-screen bg-gray-100 p-0 sm:p-12" style={{ backgroundImage: 'url("/movie-9pvmdtvz4cb0xl37.jpg")' }}>
     <Form {...form}>
+    {
+      error ? (
+        <div className="my-5 items-start max-w-full bg-yellow-600 p-3 rounded-sm font-bold">
+          <p className="text-white">{error}</p>
+        </div>
+        ): null
+    }
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mx-auto max-w-md px-6 py-12 bg-white border-0 shadow-lg sm:rounded-3xl">
         <h1 className="text-3xl font-semibold text-center">Register</h1>
         <FormField
