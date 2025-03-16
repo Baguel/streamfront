@@ -58,9 +58,7 @@ export default function RegisterForm({
       email,
       password
     }).then((response) => {
-      if (response.status == 200) {
         router.push("/login");
-      }
     }).catch(error => {
       if (error.status == 401) {
         setError(error.response.data.message);
@@ -70,15 +68,15 @@ export default function RegisterForm({
   return (
     <div className="min-h-screen bg-gray-100 p-0 sm:p-12" style={{ backgroundImage: 'url("/movie-9pvmdtvz4cb0xl37.jpg")' }}>
     <Form {...form}>
-    {
-      error ? (
-        <div className="my-5 items-start max-w-full bg-yellow-600 p-3 rounded-sm font-bold">
-          <p className="text-white">{error}</p>
-        </div>
-        ): null
-    }
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mx-auto max-w-md px-6 py-12 bg-white border-0 shadow-lg sm:rounded-3xl">
         <h1 className="text-3xl font-semibold text-center">Register</h1>
+        {
+            error ? (
+                <div className="my-5 items-start max-w-full bg-yellow-600 p-3 rounded-sm font-bold">
+                <p className="text-white">{error}</p>
+                </div>
+                ): null
+        }
         <FormField
           control={form.control}
           name="username"
