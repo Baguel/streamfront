@@ -34,7 +34,7 @@ export default function MovieDetail() {
     };
 
  const deletcomme =(id) =>{
-    axios.delete(`http://localhost:3001/user/comment/${id}`,{
+    axios.delete(`https://stream-back-kc0f.onrender.com/user/comment/${id}`,{
         headers: {
             Authorization: `Bearer ${Cookies.get("token")}`
         },
@@ -47,7 +47,7 @@ export default function MovieDetail() {
     
  }
     const getAllComment = () => {
-        axios.get(`http://localhost:3001/user/comment/movie/${params.id}`,
+        axios.get(`https://stream-back-kc0f.onrender.com/user/comment/movie/${params.id}`,
             {
                 headers: {
                     Authorization: `Bearer ${Cookies.get("token")}`
@@ -57,7 +57,7 @@ export default function MovieDetail() {
         setNewComment("");
     };
     const getUser = () => {
-        axios.get('http://localhost:3001/user/user',
+        axios.get('https://stream-back-kc0f.onrender.com/user/user',
             {
                 headers: {
                     Authorization: `Bearer ${Cookies.get("token")}`
@@ -69,7 +69,7 @@ export default function MovieDetail() {
     useEffect(() => {
         getUser()
         getAllComment()
-        axios.get(`http://localhost:3001/user/film/${params.id}`, {
+        axios.get(`https://stream-back-kc0f.onrender.com/user/film/${params.id}`, {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`
             },
@@ -85,7 +85,7 @@ export default function MovieDetail() {
     const handleCommentSubmit = (e) => {
         e.preventDefault();
         if (!newComment.trim()) return;
-        axios.post(`http://localhost:3001/user/comment/${params.id}`,
+        axios.post(`https://stream-back-kc0f.onrender.com/user/comment/${params.id}`,
             {
                 comment: newComment
             },
@@ -98,7 +98,7 @@ export default function MovieDetail() {
     };
 
     const addfavorites = (id) => {
-        axios.post(`http://localhost:3001/user/addfavorite/film/${id}`,
+        axios.post(`https://stream-back-kc0f.onrender.com/user/addfavorite/film/${id}`,
             {},
             {
                 headers: {
@@ -117,7 +117,7 @@ export default function MovieDetail() {
     }
 
     const handleRating = (index) => {
-        axios.post(`http://localhost:3001/user/rate/${params.id}/${index}`,
+        axios.post(`https://stream-back-kc0f.onrender.com/user/rate/${params.id}/${index}`,
             {},
             {
                 headers: {

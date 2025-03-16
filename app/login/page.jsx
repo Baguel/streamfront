@@ -34,7 +34,7 @@ export default function ProfileForm() {
   })
  
   function onSubmit(values) {
-    axios.post("http://localhost:3001/auth/login", {
+    axios.post("https://stream-back-kc0f.onrender.com/auth/login", {
       email: values.email,
       password: values.password,
     }).then((res) => {

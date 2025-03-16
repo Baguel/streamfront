@@ -23,7 +23,7 @@ export default function Page() {
     const [films, setFilm] = useState([])
 
     function getfilm() {
-        axios.get("http://localhost:3001/admin/allfilm", {
+        axios.get("https://stream-back-kc0f.onrender.com/admin/allfilm", {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`
             }
@@ -35,7 +35,7 @@ export default function Page() {
     }
 
     function deletefilm(id) {
-      axios.delete(`http://localhost:3001/admin/deletefilm/${id}`, {
+      axios.delete(`https://stream-back-kc0f.onrender.com/admin/deletefilm/${id}`, {
           headers: {
               Authorization: `Bearer ${Cookies.get("token")}`
           }

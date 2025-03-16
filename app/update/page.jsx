@@ -26,7 +26,7 @@ export default function UserUpdate() {
   const router = useRouter()
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/user/user`, {
+    axios.get(`https://stream-back-kc0f.onrender.com/user/user`, {
         headers: {
             'Authorization': `Bearer ${Cookies.get("token")}`
         }
@@ -42,7 +42,7 @@ export default function UserUpdate() {
 }, [])
 
 const getUser = async () => {
-  await axios.get("http://localhost:3001/user/user", {
+  await axios.get("https://stream-back-kc0f.onrender.com/user/user", {
       headers: {'Authorization': `Bearer ${Cookies.get("token")}` },
     }).then(response => {
       console.log(response.data.message)
@@ -55,7 +55,7 @@ const getUser = async () => {
 
 function updateUser(e) {
   e.preventDefault();
-  axios.put(`http://localhost:3001/user/update`,{
+  axios.put(`https://stream-back-kc0f.onrender.com/user/update`,{
     username,
     email,
     password,
@@ -74,7 +74,7 @@ function updateUser(e) {
 
 function updateUserPass(e) {
   e.preventDefault();
-  axios.put(`http://localhost:3001/user/update/pass`,{
+  axios.put(`https://stream-back-kc0f.onrender.com/user/update/pass`,{
     old: old,
     newpass: newpass,
     confirmpass: confirmpass,

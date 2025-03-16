@@ -40,7 +40,7 @@ export default function Page() {
   
   function update(e) {
     e.preventDefault()
-    axios.put(`http://localhost:3001/admin/update/film/${params.id}`, {
+    axios.put(`https://stream-back-kc0f.onrender.com/admin/update/film/${params.id}`, {
       name: name,
       url: url,
       description: description,
@@ -59,7 +59,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-      axios.get(`http://localhost:3001/admin/getfilm/${params.id}`, {
+      axios.get(`https://stream-back-kc0f.onrender.com/admin/getfilm/${params.id}`, {
         headers: {
           Authorization: `Bearer ${Cookies.get("token")}`
         }

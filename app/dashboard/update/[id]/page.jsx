@@ -40,7 +40,7 @@ export default function Page() {
 
   function update(e) {
     e.preventDefault()
-    axios.put(`http://localhost:3001/admin/update/${params.id}`, {
+    axios.put(`https://stream-back-kc0f.onrender.com/admin/update/${params.id}`, {
       username: username,
       email: email,
       isAdmin: isAdmin,
@@ -60,7 +60,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-      axios.get(`http://localhost:3001/admin/user/${params.id}`, {
+      axios.get(`https://stream-back-kc0f.onrender.com/admin/user/${params.id}`, {
         headers: {
           Authorization: `Bearer ${Cookies.get("token")}`
         }

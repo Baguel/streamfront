@@ -27,7 +27,7 @@ export default function Page() {
   }, [])
 
   function getUser() {
-    axios.get("http://localhost:3001/admin/getUser", {
+    axios.get("https://stream-back-kc0f.onrender.com/admin/getUser", {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`
       }
@@ -39,7 +39,7 @@ export default function Page() {
   }
 
   function deleteUser(id) {
-    axios.delete(`http://localhost:3001/admin/delete/${id}`, {
+    axios.delete(`https://stream-back-kc0f.onrender.com/admin/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`
       }

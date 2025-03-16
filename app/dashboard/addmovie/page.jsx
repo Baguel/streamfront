@@ -28,7 +28,7 @@ export default function Page() {
 
     function addmovie(e) {
         e.preventDefault()
-        axios.post(`http://localhost:3001/admin/addfilm`, {
+        axios.post(`https://stream-back-kc0f.onrender.com/admin/addfilm`, {
           name: name,
           url: url
         }, {

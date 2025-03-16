@@ -21,7 +21,7 @@ export default function App() {
   const router = useRouter()  
   
   const getUser = () => {
-    axios.get('http://localhost:3001/user/user',
+    axios.get('https://stream-back-kc0f.onrender.com/user/user',
         {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`
@@ -31,7 +31,7 @@ export default function App() {
     };
 
   const recupData = async () => {
-        axios.get(`http://localhost:3001/user/favorite`,
+        axios.get(`https://stream-back-kc0f.onrender.com/user/favorite`,
         {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`
@@ -45,7 +45,7 @@ export default function App() {
   }
 
   const deletefavorite = async (id) => {
-    axios.delete(`http://localhost:3001/user//deletefavorite/film/${id}`,
+    axios.delete(`https://stream-back-kc0f.onrender.com/user/deletefavorite/film/${id}`,
     {
         headers: {
             Authorization: `Bearer ${Cookies.get("token")}`

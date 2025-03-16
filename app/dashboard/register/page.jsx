@@ -51,7 +51,7 @@ export default function Page() {
     })
 
     function onSubmit(values) {
-        axios.post("http://localhost:3001/auth/register", {
+        axios.post("https://stream-back-kc0f.onrender.com/auth/register", {
             username: values.username,
             email: values.email,
             password: values.password,
