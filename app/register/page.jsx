@@ -58,7 +58,8 @@ export default function RegisterForm({
       email,
       password
     }).then((response) => {
-        router.push("/login");
+        console.log(response.data)
+        //router.push("/login");
     }).catch(error => {
       if (error.status == 401) {
         setError(error.response.data.message);
