@@ -50,22 +50,19 @@ export default function RegisterForm({
   })
  
   function onSubmit(values) {
-    const username = values.username;
-    const email = values.email;
-    const password = values.password;
-    axios.post("https://stream-back-kc0f.onrender.com/auth/register", {
-      username,
-      email,
-      password
-    }).then((response) => {
-        console.log(response.data)
-        //router.push("/login");
-    }).catch(error => {
-      if (error.status == 401) {
-        setError(error.response.data.message);
-      }
-    });
-  }
+      axios.post("https://stream-back-kc0f.onrender.com/auth/register", {
+        username: username,
+        email: values.email,
+        password: values.password,
+      }).then((res) => {
+        router.push('/login')
+      }).catch(error => {
+        if (error.status == 404 || error.status === 401) {
+          setError(error.response.data.message)
+        }
+      })
+    }
+    
   return (
     <div className="min-h-screen bg-gray-100 p-0 sm:p-12" style={{ backgroundImage: 'url("/movie-9pvmdtvz4cb0xl37.jpg")' }}>
     <Form {...form}>
