@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -38,7 +38,7 @@ export default function RegisterForm({
 }) {
  
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -59,7 +59,7 @@ export default function RegisterForm({
       password
     }).then((response) => {
       if (response.status == 200) {
-        nagivate("/login");
+        router.push("/login");
       }
     }).catch(error => {
       if (error.status == 401) {
