@@ -96,7 +96,9 @@ export default function ProfileForm() {
                  <div className="flex text-center justify-center">
                   <p className="font-5xl mt-4">OR</p>
                  </div>
-                 <Button className="w-full bg-slate-500 mt-2 hover:cursor-pointer font-semibold" type="submit">SIGN UP</Button>
+                  <Link href="/register" className="w-full bg-slate-500 mt-2 hover:cursor-pointer font-semibold"><button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                    SIGN UP
+                  </button></Link>
                  <div className="flex text-center justify-center mt-5">
                   <a href="" className="font-2xl font-semibold hover:underline">Forgot Password</a>
                  </div>
