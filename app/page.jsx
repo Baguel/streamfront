@@ -100,9 +100,10 @@ export default function App() {
              <Link href="/dashboard" className="text-white hover:text-purple-400 transition-colors"><button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Dashboard</button></Link></div>  ) : null }
            {Object.keys(user).length === 0 ? ( <div className="space-x-5">
              <Link href="/login" className="text-white hover:text-purple-400 transition-colors"><button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">log In</button></Link>
-           <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+             <Link href="/register" className="text-white hover:text-purple-400 transition-colors"><button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
              Register
-           </button></div>  ) : (<div className={`md:flex items-center space-x-6 ${isMenuOpen ? "absolute top-full w-full left-0 right-0 bg-gray-700 p-4 shadow-lg" : "hidden"}`}>
+           </button></Link>
+           </div>  ) : (<div className={`md:flex items-center space-x-6 ${isMenuOpen ? "absolute top-full w-full left-0 right-0 bg-gray-700 p-4 shadow-lg" : "hidden"}`}>
              <Link href="/" className="text-white hover:text-purple-400 transition-colors">
                <button className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
                  <FiHome /> Home
