@@ -186,7 +186,7 @@ export default function App() {
   const SearchBar = () => (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <form className="relative" onSubmit={searchFilm()}>
+        <form className="relative">
           <input
             type="text"
             placeholder="Search for movies..."
