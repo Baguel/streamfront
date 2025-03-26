@@ -44,9 +44,8 @@ export default function App() {
       });
   }
 
-  const searchFilm = async (e) => {
-    e.preventDefault();
-    confirm
+  const searchFilm = async () => {
+    console.log(elem)
     // await axios.get("https://stream-back-kc0f.onrender.com/user/user", {
     //     headers: {'Authorization': `Bearer ${Cookies.get("token")}` },
     //   }).then(response => {
