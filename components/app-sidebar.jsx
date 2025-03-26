@@ -44,7 +44,7 @@ const data = {
     {
       name: "Home",
       url: "/",
-      icon: Home,
+      icon: Map,
     },
     {
       name: "Dashboard",
