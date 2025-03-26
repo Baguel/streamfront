@@ -62,7 +62,7 @@ export default function MovieDetail() {
                 headers: {
                     Authorization: `Bearer ${Cookies.get("token")}`
                 },
-            }).then((res) => { setUser(res.data.message), console.log(res.data.message) }
+            }).then((res) => { setUser(res.data.message), console.log("ok") }
             )
     };
 
@@ -74,7 +74,7 @@ export default function MovieDetail() {
                 Authorization: `Bearer ${Cookies.get("token")}`
             },
         }).then((res) => {
-            console.log(res.data.message);
+            console.log("ok");
             setValueData(res.data.message)
         }
         )
@@ -104,7 +104,7 @@ export default function MovieDetail() {
                 headers: {
                     Authorization: `Bearer ${Cookies.get("token")}`
                 },
-            }).then((res) => console.log(res.data))
+            }).then((res) => console.log("ok"))
             .catch(error => {
                 console.log(error)
             })
