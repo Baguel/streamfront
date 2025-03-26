@@ -186,7 +186,7 @@ export default function App() {
   const SearchBar = () => (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <form className="relative">
+        <div className="relative">
           <input
             type="text"
             placeholder="Search for movies..."
@@ -195,7 +195,7 @@ export default function App() {
             aria-label="Search movies"
           />
           <FiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        </form>
+        </div>
 
         <div className="flex flex-wrap gap-4 mt-4">
           <select className="px-4 py-2 border border-gray-300 bg-white text-gray-900">
