@@ -35,6 +35,11 @@ const data = {
   },
   teams: [
     {
+      name: "Home",
+      url: "/",
+      icon: Home,
+    },
+    {
       name: "Evil Corp.",
       logo: Command,
       plan: "Free",
