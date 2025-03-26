@@ -16,7 +16,9 @@ export default function App() {
   const [favorites, setFavorites] = useState(new Set());
   const [videoData, setVideoData] = useState([])
   const [videoUrl, setVideoUrl] = useState("")
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
+  const [search, setSearch] = useState([]);
+
   const router = useRouter();
 
   const logout = async () => {
@@ -293,7 +295,8 @@ export default function App() {
       <Header />
       <Carousel />
       <SearchBar />
-      <VideoGrid />
+      { !search  ? <VideoGrid /> : null}
+      // <VideoGrid />
       <Modal />
     </div>
   );
