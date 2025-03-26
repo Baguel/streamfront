@@ -56,6 +56,7 @@ export default function Page() {
             email: values.email,
             password: values.password,
           }).then((res) => {
+            console.log(res)
             router.push('/dashboard/user')
           }).catch(error => {
             if (error.status == 404 || error.status === 401) {
