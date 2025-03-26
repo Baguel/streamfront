@@ -167,7 +167,8 @@ export default function ProfileForm() {
       username: values.username,
       email: values.email,
       password: values.password,
-    }).then((res) => {
+    }).then((res) => {4
+      console.log(res.data)
       router.push('/login')
     }).catch(error => {
       if (error.status == 404 || error.status === 401) {
