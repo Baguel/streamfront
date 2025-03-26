@@ -29,6 +29,7 @@ export default function Page() {
             }
         }).then(res => {
           setFilm(res.data.message)
+          console.log(res.data.message)
         }).catch(error => {
           console.log(error)
         })
