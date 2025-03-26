@@ -17,6 +17,7 @@ export default function App() {
   const [videoData, setVideoData] = useState([])
   const [videoUrl, setVideoUrl] = useState("")
   const [user, setUser] = useState({});
+  const [elem, setElem] = useState("")
   const [search, setSearch] = useState([]);
 
   const router = useRouter();
@@ -41,6 +42,19 @@ export default function App() {
         .catch(error => {
           console.error('There was an error!', error);
       });
+  }
+
+  const searchFilm = async (e) => {
+    e.preventDefault();
+    confirm
+    // await axios.get("https://stream-back-kc0f.onrender.com/user/user", {
+    //     headers: {'Authorization': `Bearer ${Cookies.get("token")}` },
+    //   }).then(response => {
+    //     setUser(response.data.message)
+    //   })
+    //     .catch(error => {
+    //       console.error('There was an error!', error);
+    //   });
   }
 
   useEffect(() => {
@@ -173,11 +187,12 @@ export default function App() {
   const SearchBar = () => (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <form className="relative">
+        <form className="relative" onSubmit={searchFilm()}>
           <input
             type="text"
             placeholder="Search for movies..."
             className="w-full px-4 py-3 pr-10 bg-gray-900 text-white rounded-lg focus:ring-2 focus:ring-purple-600 outline-none"
+            value={elem}  onChange={(event) => {setElem(event.target.value) }}
             aria-label="Search movies"
           />
           <FiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
