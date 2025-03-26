@@ -38,7 +38,7 @@ export default function RegisterForm({
 }) {
  
   const [error, setError] = useState('');
-
+  const router = useRouter(); 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,7 +54,6 @@ export default function RegisterForm({
         email: values.email,
         password: values.password,
       }).then((res) => {
-        //console.log(res)
         router.push('/login')
       }).catch(error => {
         if (error.status == 404 || error.status === 401) {

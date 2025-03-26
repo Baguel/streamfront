@@ -17,6 +17,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useRouter } from 'next/navigation'
 import Cookies from "js-cookie";
+import Link from 'next/link'
 
 const formSchema = z.object({
   email: z.string().min(1, { message: "This field has to be filled." }).email("This is not a valid email."),
