@@ -171,15 +171,15 @@ export default function App() {
   const SearchBar = () => (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <div className="relative">
+        <form className="relative">
           <input
             type="text"
             placeholder="Search for movies..."
-            className="w-full px-4 py-3 pr-10 rounded-lg bg-gray-900 text-white rounded-lg focus:ring-2 focus:ring-purple-600 outline-none"
+            className="w-full px-4 py-3 pr-10 bg-gray-900 text-white rounded-lg focus:ring-2 focus:ring-purple-600 outline-none"
             aria-label="Search movies"
           />
           <FiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        </div>
+        </form>
 
         <div className="flex flex-wrap gap-4 mt-4">
           <select className="px-4 py-2 border border-gray-300 bg-white text-gray-900">
