@@ -184,7 +184,7 @@ export default function App() {
   );
 
   const SearchBar = () => (
-    <div className="container mx-auto px-4 py-8">
+    <form className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <div className="relative">
           <input
@@ -208,7 +208,7 @@ export default function App() {
           </select>
         </div>
       </div>
-    </div>
+    </form>
   );
 
   const VideoGrid = () => (
